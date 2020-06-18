@@ -22,6 +22,9 @@ public class EnemySoldier extends Soldier {
                         if (Math.pow(nowX - material.getRectangle().getX(), 2) + Math.pow(nowY - material.getRectangle().getY(), 2) < 40) {
                             while (material.getStrange() > 0) {
                                 material.setStrange(material.getStrange() - 1);
+                                if (material.getStrange() == 0){
+                                    materials.remove(material);
+                                }
                             }
                         }
                     }

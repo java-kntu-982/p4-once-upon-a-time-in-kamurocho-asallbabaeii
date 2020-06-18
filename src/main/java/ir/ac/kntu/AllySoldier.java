@@ -29,6 +29,9 @@ public class AllySoldier extends Soldier {
             if (isInRange(nowX, enemySoldiers.get(i).getCircle().getCenterX(), nowY, enemySoldiers.get(i).getCircle().getCenterY())) {
                 while (enemySoldiers.get(i).getHealth() > 0) {
                     enemySoldiers.get(i).setHealth(enemySoldiers.get(i).getHealth() - 1);
+                    if (enemySoldiers.get(i).getHealth() == 0){
+                        enemySoldiers.remove(i);
+                    }
                 }
             }
         }
